@@ -1,0 +1,150 @@
+@use "../global/" as *;
+
+.navbar {
+  max-width: 133rem;
+  width: 100%;
+  height: auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 2.7rem 2rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  background-color: transparent;
+  z-index: 99999;
+  margin: 0 auto;
+
+  &__img {
+    width: 14.5rem;
+    img {
+      width: 80%;
+      height: 80%;
+    }
+  }
+
+  &__links {
+    display: flex;
+    list-style: none;
+    gap: 2.1rem;
+
+    a {
+      font-size: $p-size;
+      font-family: $text-font;
+      font-weight: 500;
+      color: $text-black;
+      text-decoration: none;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover {
+        color: $text-orange;
+      }
+    }
+
+    @media (max-width: 1000px) {
+      display: none;
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 2.5rem;
+    font-size: $p-size;
+    font-family: $text-font;
+    font-weight: 500;
+    align-items: center;
+
+    @media (max-width: 1000px) {
+      display: none;
+    }
+
+    &__sign-in {
+      color: $text-black;
+      cursor: pointer;
+      transition: all 0.3s;
+
+      &:hover {
+        color: $text-orange;
+      }
+    }
+
+    &__register {
+      background-color: $text-orange;
+      color: white;
+      padding: 1.5rem 3rem;
+      border-radius: 3px;
+      box-shadow: 0 10px 15px 0 rgb(255 83 48 / 35%);
+      transition: all 0.3s;
+
+      &:hover {
+        box-shadow: 0 10px 15px 0 rgb(255 83 48 / 50%);
+        background-color: #9d3653;
+      }
+    }
+
+    a {
+      text-decoration: none;
+    }
+  }
+}
+.navbar__title {
+  margin-left: 10px; 
+}
+
+
+.open-nav {
+  left: 0;
+}
+.rotating-logo {
+  animation: rotate 5s linear infinite; /* Adjust duration (5s) and timing function as desired */
+}
+
+@keyframes rotate {
+0% {
+  transform: rotate(-10deg); /* Start rotated slightly left */
+}
+50% {
+  transform: rotate(10deg); /* Rotate to the right */
+}
+100% {
+  transform: rotate(-10deg); /* Back to the starting position */
+}
+}
+
+.login-modal {
+  display: flex;
+  justify-content: center; /* Horizontally center */
+  align-items: center; /* Vertically center */
+  position: fixed; /* Stay in place */
+  z-index: 1000; /* Sit on top */
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+.login-modal__content {
+  background-color: #fefefe;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 30%; /* Or whatever width you want */
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2); /* Optional shadow */
+  position: relative; /* For close button positioning */
+
+}
+
+
+.close-btn {
+    position: absolute;
+    top: 10px;
+    right: 15px;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+
+}
