@@ -125,7 +125,7 @@ function BookCar() {
     case "Van Series":
       imgUrl = CarVan;
       break;
-    case "Suv Series":
+    case "SUV Series":
       imgUrl = CarSuv;
       break;
     default:
@@ -295,7 +295,7 @@ function BookCar() {
           </div>
           <div className="booking-modal__car-info__model">
             <h5>
-              <span>Car -</span> {carType}
+              <span>Car Type -</span> {carType}
             </h5>
             {imgUrl && <img src={imgUrl} alt="car_img" />}
           </div>
