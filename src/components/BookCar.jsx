@@ -74,8 +74,6 @@ function BookCar() {
       errorMsg.style.display = "flex";
     } else {
       setModal(!modal);
-      const modalDiv = document.querySelector(".booking-modal");
-      modalDiv.scroll(0, 0);
       errorMsg.style.display = "none";
     }
   };
@@ -166,11 +164,8 @@ function BookCar() {
 
               <form className="box-form">
                 <div className="box-form__car-type">
-                  <label>
-                    <i className="fa-solid fa-car"></i> &nbsp; Select Your Car
-                    Type <b>*</b>
-                  </label>
-                  <select value={carType} onChange={handleCar}>
+                <label htmlFor="carType">Select Your Car Type</label>
+                  <select id="carType" value={carType} onChange={handleCar}>
                     <option>Select your car type</option>
                     {CAR_WAREHOUSE_DATA.map((cars) => (
                             <option key={cars.id} value={cars.name}>
@@ -182,11 +177,8 @@ function BookCar() {
                 </div>
 
                 <div className="box-form__car-type">
-                  <label>
-                    <i className="fa-solid fa-location-dot"></i> &nbsp; Pick-up{" "}
-                    <b>*</b>
-                  </label>
-                  <select value={pickUp} onChange={handlePick}>
+                <label htmlFor="pickUp">Pick-up</label>
+                  <select id="pickUp" value={pickUp} onChange={handlePick}>
                     <option>Select pick up location</option>
                     {OFFICE_LOCATIONS.map((location) => (
                             <option key={location.id} value={location.city}>
@@ -197,11 +189,8 @@ function BookCar() {
                 </div>
 
                 <div className="box-form__car-type">
-                  <label>
-                    <i className="fa-solid fa-location-dot"></i> &nbsp; Drop-off{" "}
-                    <b>*</b>
-                  </label>
-                  <select value={dropOff} onChange={handleDrop}>
+                <label htmlFor="dropOff">Drop-off</label>
+                  <select id="dropOff" value={dropOff} onChange={handleDrop}>
                     <option>Select drop off location</option>
                     {OFFICE_LOCATIONS.map((location) => (
                             <option key={location.id} value={location.city}>
@@ -314,7 +303,6 @@ function BookCar() {
           <h5 style={{ fontSize: "1.5em", color: "#ec7063" }}>Pick-up and Drop-off locations are different. Prices will be updated accordingly. </h5>:<></>} 
   
         </div>
-        {/* personal info */}
         <div className="booking-modal__person-info">
           <h4>Personal Information</h4>
           <form className="info-form">
@@ -374,10 +362,9 @@ function BookCar() {
 
             <div className="info-form__1col">
               <span>
-                <label>
-                  Email <b>*</b>
-                </label>
+              <label htmlFor="email">Email</label>
                 <input
+                  id="email"
                   value={email}
                   onChange={handleEmail}
                   type="email"
@@ -414,18 +401,7 @@ function BookCar() {
                 <p className="error-modal">This field is required.</p>
               </span>
 
-              <span>
-                <label>
-                  EIR Code <b>*</b>
-                </label>
-                <input
-                  value={zipcode}
-                  onChange={handleZip}
-                  type="text"
-                  placeholder="Enter your zip code"
-                ></input>
-                <p className="error-modal ">This field is required.</p>
-              </span>
+              
             </div>
 
             <span className="info-form__checkbox">
