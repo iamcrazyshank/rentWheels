@@ -14,7 +14,7 @@ export const CAR_WAREHOUSE_DATA = [
       availability: 10,
     },
     { id: 3,
-      name: "Vam Series",
+      name: "Van Series",
       img: Van,
       availability: 10,
     },

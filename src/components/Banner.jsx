@@ -1,5 +1,5 @@
 
-function Hero() {
+function Banner() {
 
   return (
     <>
@@ -10,4 +10,4 @@ function Hero() {
   );
 }
 
-export default Hero;
+export default Banner;

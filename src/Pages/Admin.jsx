@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { CAR_WAREHOUSE_DATA } from '../data/CarData';
-import Hero from "../components/Hero";
+import Banner from "../components/Banner";
 
 function AdminPage() {
     const [carAvailability, setCarAvailability] = useState({});
@@ -34,7 +34,7 @@ function AdminPage() {
 
     return (
         <>
-            <Hero />
+            <Banner />
             <div className="admin-panel">
                 <h1 style={{ fontSize: "2em", alignContent: "center", textAlign: "center" }}>Admin Portal - Car Availability</h1>
                 <ul>
